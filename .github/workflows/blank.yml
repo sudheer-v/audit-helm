@@ -17,4 +17,4 @@ jobs:
           helm: repo list
       
       - name: Run a one-line script
-        run: cd tests && helm dependency update ./consumerapp && helm template consumerapp ./consumerapp/ --debu
+        run: cd tests && helm dependency update ./consumerapp && helm template consumerapp ./consumerapp/ --debug
