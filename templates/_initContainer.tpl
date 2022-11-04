@@ -3,7 +3,7 @@
 Kubernetes Init Container
 */}}
 {{- define "audittail.initContainer" -}}
-  image: ghcr.io/metal-toolbox/audittail:v0.1.7
+  - image: ghcr.io/metal-toolbox/audittail:v0.1.7
   name: init-audi-logs
   args:
     - 'init'
