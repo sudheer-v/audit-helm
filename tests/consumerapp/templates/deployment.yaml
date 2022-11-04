@@ -23,6 +23,7 @@ spec:
             - --audit-log-path={{ template "audittail.auditLogPath" }}
           volumeMounts:
             {{- include "audittail.volumeMount" . | nindent 12}}
+        {{- include "audittail.sidecarContainer" .| nindent 8 }}
       volumes:
         {{- include "audittail.volume" . | nindent 8}}
 
