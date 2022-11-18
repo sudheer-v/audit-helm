@@ -1,6 +1,6 @@
 {{/* vim: set filetype=mustache: */}}
 {{/*
-Kubernetes Security Context
+Kubernetes Container Security Context
 */}}
 {{- define "audittail.securityContext" -}}
 allowPrivilegeEscalation: false
