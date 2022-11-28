@@ -36,4 +36,4 @@ jobs:
           version: v3.10.0
       
       - name: Run a one-line script
-        run: cd helm-library/audittail/tests && helm dependency update ./consumerapp && helm template consumerapp ./consumerapp/ --debug
+        run: cd charts/audittail/tests && helm dependency update ./consumerapp && helm template consumerapp ./consumerapp/ --debug
