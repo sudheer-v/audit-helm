@@ -10,12 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - command: ls
-        plugins:
-          - equinixmetal-buildkite/trivy#v1.16.5:
-            severity: CRITICAL,HIGH
-            ignore-unfixed: true
-            security-checks: config,secret,vuln
       
       #- name: Get repositories
       #  uses: hiberbee/github-action-helm@1.13.0
