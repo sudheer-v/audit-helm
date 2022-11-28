@@ -2,6 +2,15 @@ apiVersion: v1
 entries:
   audittail:
   - apiVersion: v2
+    created: "2022-11-28T14:21:50.349674673Z"
+    description: A Helm chart for Kubernetes
+    digest: 4dc91c38aacb3480d44b229dbf2c631d2935695b819033c03c30e3cf34ad5f89
+    name: audittail
+    type: library
+    urls:
+    - https://github.com/sudheer-v/audit-helm/releases/download/audittail-1.0.4/audittail-1.0.4.tgz
+    version: 1.0.4
+  - apiVersion: v2
     created: "2022-11-28T14:02:28.49316968Z"
     description: A Helm chart for Kubernetes
     digest: cae7b6b92813a62c27f8eefb64f31b842ba8dfcf41c826e8ec5becc1d48d46ed
@@ -19,4 +28,4 @@ entries:
     urls:
     - https://github.com/sudheer-v/audit-helm/releases/download/audittail-1.0.2/audittail-1.0.2.tgz
     version: 1.0.2
-generated: "2022-11-28T14:02:28.49319168Z"
+generated: "2022-11-28T14:21:50.349694574Z"
