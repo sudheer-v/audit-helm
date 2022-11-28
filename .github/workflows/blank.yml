@@ -21,4 +21,4 @@ jobs:
           version: v3.10.0
       
       - name: Run a one-line script
-        run: cd audit-helm-library/tests && helm dependency update ./consumerapp && helm template consumerapp ./consumerapp/ --debug
+        run: cd audit-helm-library/audit-helm/tests && helm dependency update ./consumerapp && helm template consumerapp ./consumerapp/ --debug
