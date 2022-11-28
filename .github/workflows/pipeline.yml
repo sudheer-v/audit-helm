@@ -1,0 +1,10 @@
+---
+steps:
+- label: ":trivy: scan"
+  command: "echo '--- :shield: Trivy security scan' "
+  plugins:
+    #scan the repo and container
+    - equinixmetal-buildkite/trivy#v1.16.5:
+      severity: "CRITICAL,HIGH"
+      ignore-unfixed: true
+      security-checks: "config,secret,vuln"
