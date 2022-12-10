@@ -45,7 +45,7 @@ jobs:
         id: logs
         run: |
           kubectl logs -n ${{ matrix.scenario }} myapp -c audit-logger
-          echo "::set-output name=auditlog::$(kubectl logs -n ${{ matrix.scenario }} myapp -c audittail)"
+          echo "::set-output name=auditlog::$(kubectl logs -n ${{ matrix.scenario }} myapp -c audit-logger)"
       
       - name: Inspect logs
         run: echo ${{ steps.logs.outputs.auditlog }}
