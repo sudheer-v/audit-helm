@@ -10,7 +10,7 @@ jobs:
   kube-test:
     strategy:
       matrix:
-        scenario: [nonroot, rootuser, allroot]
+        scenario: [nonroot, rootuser]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 
@@ -26,18 +26,15 @@ jobs:
         with:
           version: v3.10.0
       
-      - name: Load audittail image into kind cluster
-        run: kind load docker-image ghcr.io/metal-toolbox/audittail:latest
+      #- name: Load audittail image into kind cluster
+      #run: kind load docker-image ghcr.io/metal-toolbox/audittail:latest
       
       - name: Create Namespace
         run: kubectl create namespace ${{ matrix.scenario }}
       
-      - name: Deploy allroot test scenario
-        run: helm template kube_scenario -s templates/allroot.yml ./kube_scenario/ | kubectl apply -f - -n ${{ matrix.scenario }}
+      - name: Deploy test scenario
+        run: helm template kube_scenario -s templates/${{ matrix.scenario }}.yml ./kube_scenario/ | kubectl apply -f - -n ${{ matrix.scenario }}
 
-      - name: Deploy nonroot test scenario
-        run: helm template kube -s templates/nonroot.yml ./kube_scenario/ | kubectl apply -f - -n ${{ matrix.scenario }}
-    
       - name: Wait for readiness
         run: kubectl wait --for=condition=ready --timeout=60s -n ${{ matrix.scenario }} pod myapp
       
