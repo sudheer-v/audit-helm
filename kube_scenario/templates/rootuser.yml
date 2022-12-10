@@ -13,7 +13,9 @@ spec:
   containers:
     - name: "{{ include "kube_scenario.name" .}}"
       image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-      command: "{{ .Values.image.command }}"
+      command: {{- range .Values.image.command }}
+        - {{ . | quote }}
+        {{- end}}
       readinessProbe:
         {{- toYaml .Values.readinessProbe | nindent 8 }}
       resources:

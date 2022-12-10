@@ -4,7 +4,10 @@ nameOverride: "myapp"
 image:
   repository: busybox
   tag: stable
-  command: ['sh', '-c', 'echo This is an audit log > /app-audit/audit.log && touch /tmp/ready && sleep 3600']
+  command:
+    - 'sh'
+    - '-c'
+    - 'echo This is an audit log > /app-audit/audit.log && touch /tmp/ready && sleep 3600'
 
 auditailImage: "ghcr.io/metal-toolbox/audittail:latest"
 
