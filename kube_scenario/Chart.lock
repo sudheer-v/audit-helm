@@ -1,6 +1,6 @@
 dependencies:
 - name: audittail
-  repository: https://sudheer-v.github.io/audit-helm
-  version: 1.0.5
-digest: sha256:fc26bc633d590a5c5f9a223b615d65a831163ffaafc1450933beac6b3a57c590
-generated: "2022-12-10T12:46:30.577052465Z"
+  repository: file://../../audit-helm/charts/audittail/
+  version: 1.0.6
+digest: sha256:904b547c32caed9c4d926b4d0a4b4871172d6df490a066b059f303a22edd9ae9
+generated: "2022-12-10T16:35:16.749468226Z"
